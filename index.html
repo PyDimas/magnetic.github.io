@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnetic Client</title>
+    <link rel="stylesheet" href="snow.min.css">
     <style>
         body {
             margin: 0;
@@ -244,7 +245,7 @@
     <section class="hero-section" id="home">
         <h1>Magnetic Client</h1>
         <p>Уникальный инструмент, который изменит вашу игру.</p>
-        <a href="https://workupload.com/file/Yyn5dUfTFbk" target="_blank" class="btn-primary">Скачать сейчас</a>
+        <a href="https://workupload.com/file/63G3H5fR6VK" target="_blank" class="btn-primary">Скачать сейчас</a>
     </section>
     <section class="section features" id="instructions">
         <h2>Почему этот чит?</h2>
@@ -293,6 +294,35 @@
     <footer>
         <p>&copy; 2024 Magnetic Client. Все права защищены.</p>
     </footer>
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Create falling snowflakes
+        const createSnowflake = () => {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.setProperty('--randomX', Math.random());
+            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+            snowflake.innerHTML = '❄';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        };
+        setInterval(createSnowflake, 500);
+    </script>
+    
     <script>
         const audio = new Audio('newyear.wav');
         const playPauseBtn = document.getElementById('play-pause');
@@ -345,19 +375,7 @@
             document.removeEventListener('mousemove', moveLabel);
             document.removeEventListener('mouseup', stopMovingLabel);
         }
-        const createSnowflake = () => {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.style.setProperty('--randomX', Math.random());
-            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-            snowflake.innerHTML = '❄';
-            document.body.appendChild(snowflake);
 
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000);
-        };
-        setInterval(createSnowflake, 500);
     </script>
 </body>
 </html>
