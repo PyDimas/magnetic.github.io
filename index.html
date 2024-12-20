@@ -17,6 +17,41 @@
             scroll-behavior: smooth;
             position: relative;
         }
+        .slider {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            animation: slide 10s infinite;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .review-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .review {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            animation: slide 10s linear infinite;
+        }
         header {
             background: #161616;
             padding: 20px;
@@ -67,6 +102,7 @@
             100% {
                 background-position: 200%;
             }
+            
         }
         .hero-section p {
             margin: 10px 0 20px;
@@ -241,6 +277,16 @@
                 left: calc(100vw * var(--randomX));
             }
         }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
     </style>
 </head>
 <body>
@@ -255,7 +301,7 @@
     <section class="hero-section" id="home">
         <h1>Magnetic Client</h1>
         <p>Уникальный инструмент, который изменит вашу игру.</p>
-        <a href="https://workupload.com/file/63G3H5fR6VK" target="_blank" class="btn-primary">Скачать сейчас</a>
+        <a href="https://workupload.com/file/p5sLJfkZ2dR" target="_blank" class="btn-primary">Скачать сейчас</a>
     </section>
     <section class="section features" id="instructions">
         <h2>Почему этот чит?</h2>
@@ -301,6 +347,8 @@
             </div>
         </div>
     </section>
+    <body>
+    </body>
     <footer>
         <p>&copy; 2024 Magnetic Client. Все права защищены.</p>
     </footer>
@@ -351,6 +399,7 @@
             }
         });
 
+
         audio.addEventListener('timeupdate', () => {
             const progress = (audio.currentTime / audio.duration) * 100;
             progressBar.style.width = `${progress}%`;
@@ -387,5 +436,6 @@
         }
 
     </script>
+    
 </body>
 </html>
