@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnetic Client</title>
@@ -53,39 +53,62 @@
             border-radius: 5px;
             animation: slide 10s linear infinite;
         }
-        header {
-            background: #161616;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
+        .header {
+            position: fixed;
             top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border-radius: 12px;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-            transition: transform 0.3s ease-in-out;
         }
-        header.hidden {
-            transform: translateY(-100%);
+
+        .logo-container {
+            background-color: #1c1b26;
+            padding: 8px 16px;
+            border-radius: 8px;
         }
-        header nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.2em;
+
+        .logo {
+            width: 30px;
+            height: 30px;
         }
-        header nav a:hover {
-            color: #6a5acd;
+
+        .nav-group {
+            display: flex;
+            gap: 20px;
+            background-color: #1c1b26;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .english-group {
+            background-color: #1c1b26;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .nav-button {
+            background: none;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            color: #bbbbbb;
         }
         .hero-section {
             height: 100vh;
-            background: #000000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding-top: 80px; /* Отступ, чтобы не перекрывал header */
         }
         .hero-section h1 {
             font-size: 3em;
@@ -103,7 +126,7 @@
             100% {
                 background-position: 200%;
             }
-            
+
         }
         .hero-section p {
             margin: 10px 0 20px;
@@ -290,168 +313,185 @@
             75% { transform: translateX(-100%); }
             100% { transform: translateX(0); }
         }
+        .discord-button {
+    align-items: center;
+    background-color: #5865F2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.discord-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.discord-button:hover {
+    background-color: #4752C4;
+}
+
     </style>
 </head>
 <body>
-    <header>
-        
-        <nav>
-            <a href="#home">Главная</a>
-            <a href="#instructions">Инструкция</a>
-            <a href="https://discord.gg/VU2GUPuxgg">Поддержка</a>
 
-        </nav>
-    </header>
-    <section class="hero-section" id="home">
-        <h1>Magnetic Client</h1>
-        <p>Уникальный инструмент, который изменит вашу игру.</p>
-        <a href="https://workupload.com/file/fgewctHXnM6" target="_blank" class="btn-primary">Скачать сейчас</a>
-        </div>
-        
-    </section>
-    <section class="section features" id="instructions">
-        <h2>Почему этот чит?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <img src="Visuals.png" alt="Производительность">
-                <h3>Визуализация</h3>
-                <p>В нашем клиенте присутствует большое количество визуальных функций, которые сделают вашу игру более красочной.</p>
-            </div>
-
-            <div class="feature-card">
-                <img src="Combat.png" alt="Частые обновления">
-                <h3>Частые обновления</h3>
-                <p>Мы регулярно обновляем функционал в нашем клиенте, добавляя новые функции.</p>
-            </div>
-            
-            <div class="feature-card">
-                <img src="Movement.png" alt="Оптимизация">
-                <h3>Оптимизация</h3>
-                <p>Мы постоянно улучшаем оптимизацию нашего клиента и самой игры.</p>
-            </div>
-            <div class="feature-card">
-                <img src="betatest.png" alt="Карта">
-                <h3>Что то?</h3>
-                <p>Что то странное будет происходит с сайтом при долгом ожидание...</p>
-            </div>
-        </div>
-    </section>
+<div class="header">
+    <div class="logo-container">
+        <img src="logo.png" alt="Логотип" class="logo">
+    </div>
+    <div class="nav-group">
+        <button class="nav-button" onclick="location.href='#home'">Главная</button>
+        <button class="nav-button" onclick="location.href='#instructions'">О нас</button>
 
     </div>
-    </section>
-    <section class="audio-player-section">
-        <div class="audio-player">
+    <div class="english-group">
+        <button class="nav-button" onclick="location.href='index1.html'">English</button>
+    </div>
+</div>
+<section class="hero-section" id="home">
+    <h1>Magnetic Client</h1>
+    <p>Уникальный инструмент, который изменит вашу игру.</p>
+    <a href="https://workupload.com/file/fgewctHXnM6" target="_blank" class="btn-primary">Скачать сейчас</a>
+    </div>
 
-            <div>Jingle Bells</div>
-            <div>Frank Sinatra</div>
-
-            <button id="play-pause">▶️</button>
-            <button id="rewind">⏪</button>
-            <button id="forward">⏩</button>
-            <div class="volume-container">
-                <input type="range" id="volume" value="1" step="0.1" min="0" max="1">
-            </div>
-            <div class="progress-container">
-                <div class="progress" id="progress-bar"></div>
-            </div>
+</section>
+<section class="section features" id="instructions">
+    <h2>Почему этот чит?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <img src="Visuals.png" alt="Производительность">
+            <h3>Визуализация</h3>
+            <p>В нашем клиенте присутствует большое количество визуальных функций, которые сделают вашу игру более красочной.</p>
         </div>
 
-    </section>
-    <body>
-    </body>
-    <footer>
-        <p>&copy; 2024 Magnetic Client. Все права защищены.</p>
-    </footer>
-    <script>
-        
-        let lastScrollY = window.scrollY;
-        const header = document.querySelector('header');
+        <div class="feature-card">
+            <img src="Combat.png" alt="Частые обновления">
+            <h3>Частые обновления</h3>
+            <p>Мы регулярно обновляем функционал в нашем клиенте, добавляя новые функции.</p>
+        </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
-            }
-            lastScrollY = window.scrollY;
-        });
+        <div class="feature-card">
+            <img src="Movement.png" alt="Оптимизация">
+            <h3>Оптимизация</h3>
+            <p>Мы постоянно улучшаем оптимизацию нашего клиента и самой игры.</p>
+        </div>
+        <div class="feature-card">
+            <img src="betatest.png" alt="Карта">
+            <h3>Что то?</h3>
+            <p>Что то странное будет происходит с сайтом при долгом ожидание...</p>
+        </div>
+    </div>
+</section>
+</section>
+<body>
+</body>
+<footer>
 
-        // Create falling snowflakes
-        const createSnowflake = () => {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.style.setProperty('--randomX', Math.random());
-            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-            snowflake.innerHTML = '❄';
-            document.body.appendChild(snowflake);
+    <p>&copy; 2025 Magnetic Client. Все права защищены.</p>
+    <a href="https://discord.gg/dshxFEfW4X" target="_blank" class="discord-button">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/discord.png" alt="Discord">
+        Присоединиться на Discord Сервер
+    </a>
 
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000);
-        };
-        setInterval(createSnowflake, 500);
-    </script>
-    
-    <script>
-        const audio = new Audio('newyear.wav');
-        const playPauseBtn = document.getElementById('play-pause');
-        const progressBar = document.getElementById('progress-bar');
-        const volumeControl = document.getElementById('volume');
-        const rewindBtn = document.getElementById('rewind');
-        const forwardBtn = document.getElementById('forward');
-
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                playPauseBtn.textContent = '⏸️';
-            } else {
-                audio.pause();
-                playPauseBtn.textContent = '▶️';
-            }
-        });
-
-
-        audio.addEventListener('timeupdate', () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = `${progress}%`;
-        });
-
-        volumeControl.addEventListener('input', () => {
-            audio.volume = volumeControl.value;
-        });
-
-        rewindBtn.addEventListener('click', () => {
-            audio.currentTime = Math.max(0, audio.currentTime - 10);
-        });
-
-        forwardBtn.addEventListener('click', () => {
-            audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
-        });
-
-        // Movable label functionality
-        movableLabel.addEventListener('mousedown', (e) => {
-            offsetX = e.clientX - movableLabel.offsetLeft;
-            offsetY = e.clientY - movableLabel.offsetTop;
-            document.addEventListener('mousemove', moveLabel);
-            document.addEventListener('mouseup', stopMovingLabel);
-        });
-
-        function moveLabel(e) {
-            movableLabel.style.left = `${e.clientX - offsetX}px`;
-            movableLabel.style.top = `${e.clientY - offsetY}px`;
+</footer>
+<script>
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+    document.addEventListener("keydown", (e) => {
+        if (["F12", "U"].includes(e.key) && e.ctrlKey ||
+            (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key))) {
+            e.preventDefault();
         }
+    });
+    setInterval(() => {
+        let devtools = window.outerWidth - window.innerWidth > 160 ||
+                       window.outerHeight - window.innerHeight > 160;
+        if (devtools) { alert("DevTools запрещено!"); window.close(); }
+    }, 1000);
+</script>
 
-        function stopMovingLabel() {
-            document.removeEventListener('mousemove', moveLabel);
-            document.removeEventListener('mouseup', stopMovingLabel);
+<script>
+
+
+
+    // Create falling snowflakes
+    const createSnowflake = () => {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.setProperty('--randomX', Math.random());
+        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => {
+            snowflake.remove();
+        }, 10000);
+    };
+    setInterval(createSnowflake, 500);
+</script>
+
+<script>
+    const audio = new Audio('newyear.wav');
+    const playPauseBtn = document.getElementById('play-pause');
+    const progressBar = document.getElementById('progress-bar');
+    const volumeControl = document.getElementById('volume');
+    const rewindBtn = document.getElementById('rewind');
+    const forwardBtn = document.getElementById('forward');
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = '⏸️';
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = '▶️';
         }
-        
+    });
 
-    </script>
+
+    audio.addEventListener('timeupdate', () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+    });
+
+    volumeControl.addEventListener('input', () => {
+        audio.volume = volumeControl.value;
+    });
+
+    rewindBtn.addEventListener('click', () => {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+    });
+
+    forwardBtn.addEventListener('click', () => {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    });
+
+    // Movable label functionality
+    movableLabel.addEventListener('mousedown', (e) => {
+        offsetX = e.clientX - movableLabel.offsetLeft;
+        offsetY = e.clientY - movableLabel.offsetTop;
+        document.addEventListener('mousemove', moveLabel);
+        document.addEventListener('mouseup', stopMovingLabel);
+    });
+
+    function moveLabel(e) {
+        movableLabel.style.left = `${e.clientX - offsetX}px`;
+        movableLabel.style.top = `${e.clientY - offsetY}px`;
+    }
+
+    function stopMovingLabel() {
+        document.removeEventListener('mousemove', moveLabel);
+        document.removeEventListener('mouseup', stopMovingLabel);
+    }
+
+
+</script>
 <script>
     // Проверяем, был ли пользователь уже награжден
     const betaRewarded = localStorage.getItem('betaRewarded');
-    
+
     if (!betaRewarded) {
         // Устанавливаем таймер на 2 часа (7200000 миллисекунд)
         setTimeout(() => {
@@ -467,7 +507,7 @@
             popup.style.borderRadius = '10px';
             popup.style.zIndex = '9999';
             popup.style.textAlign = 'center';
-    
+
             const closeButton = document.createElement('button');
             closeButton.textContent = 'OK';
             closeButton.style.marginTop = '20px';
@@ -477,21 +517,21 @@
             closeButton.style.border = 'none';
             closeButton.style.borderRadius = '5px';
             closeButton.style.cursor = 'pointer';
-    
+
             // Меняем действие кнопки на переход на сайт YouTube
             closeButton.onclick = () => {
                 window.location.href = 'https://discord.gg/6actwNvgPU';
             };
-    
+
             popup.appendChild(closeButton);
             document.body.appendChild(popup);
-    
+
             // Помечаем, что пользователь уже получил бета тест
             localStorage.setItem('betaRewarded', 'true');
         }, 7200000); // 2 часа в миллисекундах
     }
 </script>
 
-    
+
 </body>
 </html>
